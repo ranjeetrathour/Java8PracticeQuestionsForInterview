@@ -45,6 +45,31 @@ public class LL {
         return -1;
     }
 
+    public void addFirstPosition(int data){
+        Node node = new Node(data);
+        if (head==null){
+            head = node;
+            tail = head;
+        }else {
+            node.next=head;
+            head = node;
+        }
+    }
+
+    public void addLastPosition(int data){
+        Node node = new Node(data);
+        if (head == null){
+            head = node;
+            tail = head;
+        }
+        Node current = head;
+        while (current.next!=null){
+            current=current.next;
+        }
+        current.next = node;
+        tail = node;
+    }
+
     // Check if the linked list is empty
     public boolean isEmpty() {
         return head == null;
@@ -72,6 +97,8 @@ class Main {
         ll.add(10);
         ll.add(20);
         ll.add(30);
+        ll.addFirstPosition(45);
+        ll.addLastPosition(87);
 
         System.out.println(ll.getDataFromSpecificPosition(1));
 
