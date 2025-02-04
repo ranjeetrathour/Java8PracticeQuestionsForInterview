@@ -60,7 +60,6 @@ public class LL {
         Node node = new Node(data);
         if (head == null){
             head = node;
-            tail = head;
         }
         Node current = head;
         while (current.next!=null){
